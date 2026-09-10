@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ezequel Mah Husbae 💜</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #eee0ff, #d8bfff, #f8f1ff);
+            color: #4b315f;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts */
+
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: float 7s linear infinite;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Opening */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .small-title {
+            letter-spacing: 4px;
+            font-size: 13px;
+            color: #806096;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin: 15px 0;
+            color: #633f79;
+            text-shadow: 0 0 15px rgba(255,255,255,0.8);
+        }
+
+        .names {
+            font-size: 23px;
+            color: #76548a;
+        }
+
+        .date {
+            margin-top: 12px;
+            font-size: 16px;
+            color: #806096;
+        }
+
+        .open-btn {
+            margin-top: 35px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #76548a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(88, 55, 105, 0.25);
+            transition: 0.3s;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.06);
+            background: #633f79;
+        }
+
+        /* Main content */
+
+        #content {
+            display: none;
+            padding-bottom: 70px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.78);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 12px 35px rgba(85, 52, 105, 0.15);
+        }
+
+        .card h2 {
+            text-align: center;
+            color: #633f79;
+            margin-bottom: 20px;
+        }
+
+        .letter {
+            line-height: 1.8;
+            font-size: 16px;
+            white-space: pre-line;
+        }
+
+        /* Photos */
+
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .photo {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 18px;
+            background: #e8d7f5;
+            border: 3px solid rgba(118,84,138,0.15);
+        }
+
+        .photo-note {
+            text-align: center;
+            font-size: 13px;
+            color: #806096;
+            margin-top: 15px;
+        }
+
+        /* Ending */
+
+        .ending {
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .ending h2 {
+            font-size: 32px;
+            color: #633f79;
+        }
+
+        .ending p {
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        .big-heart {
+            font-size: 55px;
+            animation: beat 1.3s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @media(max-width:600px) {
+            h1 {
+                font-size: 35px;
+            }
+
+            .photos {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 280px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="heart" style="left:10%; animation-delay:0s;">💜</div>
+    <div class="heart" style="left:30%; animation-delay:2s;">♡</div>
+    <div class="heart" style="left:50%; animation-delay:4s;">💜</div>
+    <div class="heart" style="left:70%; animation-delay:1s;">♡</div>
+    <div class="heart" style="left:90%; animation-delay:3s;">💜</div>
+
+
+    <!-- Opening -->
+    <section class="hero">
+
+        <div class="small-title">
+            A little something for
+        </div>
+
+        <h1>Mr. Ezequel Tagaloguin</h1>
+
+        <div class="names">
+            💜Mah Husbae^^
+        </div>
+
+        <div class="date">
+            September 13, 2026
+        </div>
+
+        <button class="open-btn" onclick="openLetter()">
+            💌 Open My Letter
+        </button>
+
+    </section>
+
+
+    <!-- Content -->
+    <main id="content">
+
+        <div class="container">
+
+            <!-- Photo section -->
+            <section class="card">
+
+                <h2>Our Little Memories 📸</h2>
+
+                <div class="photos">
+
+                    <!-- CHANGE THESE IMAGE FILE NAMES -->
+                    <img src="photo0.jpg" class="photo">
+                    <img src="photo3.jpg" class="photo">
+                    <img src="photo4.jpeg" class="photo">
+                    <img src="photo5.jpeg" class="photo">
+
+                </div>
+
+                <p class="photo-note">
+                    Some of the memories we've made so far. 💜
+                </p>
+
+            </section>
+
+
+            <!-- Letter -->
+            <section class="card">
+
+                <h2>To My Husbae 💌</h2>
+
+                <div class="letter">
+
+Hiii mah future husbaeeee! Today is whhhhaaaaa—??? Gashhh, why did the days go by so fast? It's already been one month, sure na ni? 😭 Mura ra man og gahapon na gisugot tika. 🥹 Happy first monthsary to usss, baeee! ❤️ yeyyyy🫶 <br>
+Unsay unahon ug ingon? HAHAHAHAHA, murag taas taas jd ni sha bae, ayg ka bored ug basa flsss 🥹. 📣LONG MESSAGE ALERT‼️hehe✌️<br>
+Tonight is Sept. 10 2026 and yessss ga prepared nako HAHAHAHAH. So yeahhh, this is my first time celebrating something like this, so I honestly don't know if I'm doing it right. 🥹 But I wanted to give you something because I'm happy that I get to experience this with you. However, dili lang siya butang since wael money huhuness bawi ra ko puhon mwuaps; ipamaagi lang sa nako ug ing-ani since I'm your programmer hehe kuno, chr eme. <br>
+
+Nakaingon na ko nimo ani pero ako nalang sab balikon hehe. During Sinag bae, di lage ko manghimantay ninyong mga lalaki kay nakafocus kos akoa HAHAHAHA. Nakalimot ko ug when tika nabantayan basta kay mu peace sign ko ato AHHAHAHAH and I never thought that na na-fall diay ka nako🥹 gashhh. Diba atong paglaag nato kay didto ko nagkaspark nimo? pero before thay kay murag na attractan na jd ko nimo atong time na michat kas akoa regarding sa google drive HAHAHAH. Kabalo ba kas akong mindset ato na time na nagkafeelings na jd ko nimo? nakachika nako nimo ani na "Dili jd ni pwedeng lakiha paras akoa kay gwapo ra kaayo tas for sure naa koy mga kailog ani tas unsa ra man gd pd ko." mao gyd nay naas akong hunahuna. <br>
+
+Then atong time na ga chat² na ta kay murag ga assume jd ko na ma reciprocate nimo ang akong feelings pero naa gyapon na nga mindset na bawal. However, I never thought that you'll pursue me🥹 miskag naay laing eab diha na gwapa. ambot oii ug unsay nakaon nimo, wa man pd tika gilumay HAHAHAHAHA. Still curious ug nganong ako jd HAHAHAHA. Pero still ga doubt ko bae ug ako bay iwilling to take a risk , icommit nimo, or willing ifight🤧. Ang maingon ra nako kay di sab ko ingon special na eab🥹. <br>
+
+Atong time na mag sabay ming JC, ikaw ra gyuy tabian namo ato whehehe. Nasaksihan ni JC ang akong kaOA sa pagkachika about you nakss AHAHAHAH. Tas kato sab bitawng galaag ta na wa ko nimo gipansin, nalain jd ko ato, na-hurt ba naman ang ea. Natag-anan jd nako ang rason na about ni JC jd maong wa ko nimo pansina HAHAHAHA. Wag kang ganyan kay ikaw moy minte namong gitabian hehe. <br>
+
+Insert: Wa baya ko ga expect na kwaon ko nimos bh atong nanglaag ta WHAHAHHA. Kahaba bas akong hair na gikuha² ko nimo ato HAHAHAHAH chr. basta yan langss ang aking chikaaa <br>
+
+Ari na tas sweet message mwehehehe <br>
+
+Thankyousmmm baeee, for all the moments we've shared so far, and sa imong walang sawang pagpaminaw sa akong yap/kalain sa buot ug pagsabot nako although over na kaayo ko sometimes. I hope we get to make many more memories together, and I hope ikaw ang akong kasabay sa altar, if it is God's will ❤️‍🩹 <br>
+
+I apologize baeee, if ma-over na akong batasan sometimes. Mao gyud na akong red flag, I badly want to change, and I sometimes worry nga basin kapoyan ka nako🤧 tas mangita kag lain since dali ra kaayo ko mailisan🥲, labaw nag minte nalang ang akong bati na side ang akong mapakita nimo. I also apologize for having a negative mindset during our fight. Actually, di jud pd ko mubulag oii as long as way cheating involved, and I know that this toxic attitude of mine can change as I learn to understand things better.
+
+This braincell of mine is still a little immature HAHAHAHA. Like, di pa jud kaayo ko maayo musabot sometimes kay lage I want you to meet my expectations, but I know that's not always right cause dili man jud tanan nakong gusto kay makuha. Maong minte ko malain tungod sakong mga expectations na ika disappoint nako. Mao niy mali nako, su is per mali ni nga klasing mindset. <br>
+
+Also bae, regarding sakong red flag pd na side sa lalaki. I assure you bae that gina avoid nako sila pero kung educ purposes maka entertain jd ko bae also sa co-officers nako. Pleasee know that na you're enough for me bae and Iloveyouuuusm. You're irreplaceable and I do have empathy when it comes in ana. Gashhh, wa may makapantay saimoha nakss, di sila kaabot nimo and when it comes to guys, I do honest talk saimoha kay labaw sab ko na di ko ganahan na naay secret or panghimotbot sa atong rs. Both of us should be open. like, honest lang jd sa tanan, no secrets bae. <br>
+
+Therefore, I know that someday we can define the phrase "from toxic to a healthy relationship" if both of us are willing to grow and understand each other consistently, we can achieve that. Matarong ra gyud ning utok nako baeee 🤞🤞HAHAHAHA. Unta dili ka kapoyan ug sabot nako bae🥹🥺🫶 and I won't abuso² that side of yours. Pero unta consistent ang saktong trato sa usag usa🤞<br>
+
+Moreover, Heaven above knows how thankful I am to have you because, like, damn, ikaw jud akong ideal man! Gashhhh, thankyouuu Lorddd! 😭❤️. Pero dili sa kuan nimo nga side HAHAHAHAH. Still thankful<br>
+
+ILOVEYOUUUUUALOTTT MAH HUSBAEEE💋🫶. Allow me to love you in the best way I know how, while I slowly learn to let go of my doubts and fears. For every obstacle that we face, we should fight the problems themselves not ourselves and let us both put God at the center of everything💞. More months to us bae🎉✨�
+
+                </div>
+
+            </section>
+
+
+            <!-- Ending -->
+            <section class="ending">
+
+                <div class="big-heart">💜</div>
+
+                <h2>Happy 1st Monthsary!</h2>
+
+                <p>
+                    One month down, and hopefully many more memories to come. 🥹
+                </p>
+
+                <p>
+                    — Your Wifaee, Ms. Jannen Delfino 💜
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function openLetter() {
+
+            document.getElementById("content").style.display = "block";
+
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
