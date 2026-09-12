@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ezequel Mah Husbae 💜</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,255,255,0.85),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(207,174,239,0.45),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(188,145,224,0.35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(255,255,255,0.75),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ead8ff,
+            #d1b2f2,
+            #eee1ff,
+            #d9c0f5
+        );
+
+    background-attachment: fixed;
+
+    color: #4b315f;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   GLOBAL FLOATING HEARTS
+===================================================== */
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+
+    font-size: 20px;
+
+    animation: float 8s linear infinite;
+
+    opacity: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(118,84,138,0.4)
+        );
+}
+
+@keyframes float {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            rotate(180deg)
+            scale(1.1);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   GLOBAL SPARKLES
+===================================================== */
+
+.sparkle {
+    position: fixed;
+
+    color: white;
+
+    font-size: 14px;
+
+    animation:
+        sparkle 3s ease-in-out infinite;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.8);
+}
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: 90%;
+    max-width: 800px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px 15px;
+
+    position: relative;
+}
+
+.hero::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 12%;
+    left: 12%;
+
+    font-size: 80px;
+
+    color: rgba(118,84,138,0.12);
+
+    transform: rotate(-20deg);
+}
+
+.hero::after {
+    content: "♡";
+
+    position: absolute;
+
+    bottom: 12%;
+    right: 12%;
+
+    font-size: 100px;
+
+    color: rgba(118,84,138,0.12);
+
+    transform: rotate(20deg);
+}
+
+.small-title {
+    letter-spacing: 5px;
+
+    font-size: 13px;
+
+    color: #806096;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 45px;
+
+    margin: 15px 0;
+
+    color: #633f79;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.9),
+        0 0 25px rgba(118,84,138,0.2);
+
+    animation:
+        titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+
+    0%, 100% {
+        text-shadow:
+            0 0 10px rgba(255,255,255,0.8);
+    }
+
+    50% {
+        text-shadow:
+            0 0 15px white,
+            0 0 30px rgba(118,84,138,0.35);
+    }
+}
+
+.names {
+    font-size: 23px;
+
+    color: #76548a;
+}
+
+.date {
+    margin-top: 12px;
+
+    font-size: 16px;
+
+    color: #806096;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.open-btn {
+    margin-top: 35px;
+
+    padding: 15px 32px;
+
+    border:
+        2px solid rgba(255,255,255,0.7);
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #76548a,
+            #633f79
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(88,55,105,0.25),
+        0 0 0 5px rgba(255,255,255,0.2);
+
+    transition:
+        all 0.3s ease;
+}
+
+.open-btn:hover {
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    box-shadow:
+        0 12px 30px rgba(88,55,105,0.35),
+        0 0 25px rgba(118,84,138,0.4);
+}
+
+.open-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+#content {
+    display: none;
+
+    padding-bottom: 70px;
+
+    animation:
+        reveal 1.2s ease;
+}
+
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   GLASS CARDS
+===================================================== */
+
+.card {
+    position: relative;
+
+    background:
+        rgba(255,255,255,0.42);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid rgba(255,255,255,0.65);
+
+    box-shadow:
+        0 20px 50px rgba(85,52,105,0.14),
+        inset 0 0 35px rgba(255,255,255,0.2);
+
+    padding: 35px 25px;
+
+    margin-bottom: 40px;
+
+    border-radius: 20px;
+
+    /*
+       IMPORTANT:
+       Allows the floating decorations to
+       appear above the glass background.
+    */
+    isolation: isolate;
+
+    overflow: visible;
+}
+
+
+/* =====================================================
+   CARD CORNER DECORATIONS
+===================================================== */
+
+.card::before {
+    content: "♡  ✦  ♡";
+
+    position: absolute;
+
+    top: 14px;
+    right: 20px;
+
+    font-size: 18px;
+
+    color:
+        rgba(118,84,138,0.35);
+
+    letter-spacing: 5px;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.card::after {
+    content: "♡";
+
+    position: absolute;
+
+    bottom: -8px;
+    left: 15px;
+
+    font-size: 50px;
+
+    color:
+        rgba(118,84,138,0.10);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   FLOATING SYMBOLS INSIDE CARDS
+===================================================== */
+
+.card-float {
+    position: absolute;
+
+    color: #9b6bb0;
+
+    opacity: 0.65;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 8px rgba(155,107,176,0.25);
+
+    animation:
+        cardFloat 4s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-9px)
+            rotate(5deg)
+            scale(1.08);
+    }
+}
+
+
+/* Different floating positions */
+
+.float-a {
+    top: 75px;
+    left: 18px;
+    font-size: 25px;
+}
+
+.float-b {
+    top: 160px;
+    right: 18px;
+    font-size: 19px;
+
+    animation-delay: 0.8s;
+}
+
+.float-c {
+    top: 48%;
+    left: 12px;
+    font-size: 18px;
+
+    animation-delay: 1.4s;
+}
+
+.float-d {
+    top: 58%;
+    right: 15px;
+    font-size: 27px;
+
+    animation-delay: 2s;
+}
+
+.float-e {
+    bottom: 70px;
+    left: 25%;
+    font-size: 17px;
+
+    animation-delay: 0.5s;
+}
+
+.float-f {
+    bottom: 35px;
+    right: 25%;
+    font-size: 21px;
+
+    animation-delay: 1.8s;
+}
+
+
+/* =====================================================
+   MEMORY TITLE
+===================================================== */
+
+.memory-title {
+    text-align: center;
+
+    position: relative;
+
+    z-index: 4;
+
+    margin-bottom: 28px;
+}
+
+.memory-title h2 {
+    margin-bottom: 5px;
+
+    color: #633f79;
+
+    font-size: 27px;
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        0 2px 8px rgba(118,84,138,0.15);
+}
+
+.memory-title::after {
+    content:
+        "♡  ✦  ♡  ✦  ♡";
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: #9c72ae;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+}
+
+.camera {
+    font-size: 30px;
+
+    line-height: 1;
+
+    display: inline-block;
+
+    animation:
+        cameraFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes cameraFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(3deg);
+    }
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter {
+    line-height: 1.9;
+
+    font-size: 16px;
+
+    white-space: pre-line;
+
+    text-align: justify;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.letter::first-letter {
+    font-size: 35px;
+
+    color: #76548a;
+}
+
+.card > h2 {
+    position: relative;
+
+    z-index: 4;
+
+    text-align: center;
+
+    color: #633f79;
+
+    margin-bottom: 25px;
+
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   PHOTOS AREA
+===================================================== */
+
+.photos {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 55px 30px;
+
+    padding:
+        35px 15px 45px;
+
+    /*
+       Decorations can sit between
+       card background and polaroids.
+    */
+    isolation: isolate;
+}
+
+
+/* =====================================================
+   PHOTO AREA DECORATIONS
+===================================================== */
+
+.photos::before {
+    content:
+        "♡     ✦     ♡     ✧     ♡";
+
+    position: absolute;
+
+    top: 5px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color:
+        rgba(118,84,138,0.40);
+
+    font-size: 20px;
+
+    letter-spacing: 8px;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.photos::after {
+    content:
+        "✦   ♡   ✧       ♡   ✦   ♡";
+
+    position: absolute;
+
+    bottom: 5px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color:
+        rgba(118,84,138,0.35);
+
+    font-size: 17px;
+
+    letter-spacing: 6px;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   EXTRA FLOATING SYMBOLS BEHIND POLAROIDS
+===================================================== */
+
+.photo-decoration {
+    position: absolute;
+
+    color: #9b6bb0;
+
+    opacity: 0.70;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 8px rgba(155,107,176,0.30);
+
+    animation:
+        photoFloat 3.5s ease-in-out infinite;
+}
+
+.deco1 {
+    top: 20%;
+    left: 2%;
+
+    font-size: 30px;
+
+    transform: rotate(-10deg);
+}
+
+.deco2 {
+    top: 38%;
+    right: 2%;
+
+    font-size: 24px;
+
+    animation-delay: 0.7s;
+}
+
+.deco3 {
+    top: 61%;
+    left: 4%;
+
+    font-size: 22px;
+
+    animation-delay: 1.3s;
+}
+
+.deco4 {
+    bottom: 8%;
+    right: 5%;
+
+    font-size: 25px;
+
+    animation-delay: 2s;
+}
+
+@keyframes photoFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(6deg)
+            scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   POLAROIDS
+===================================================== */
+
+.polaroid {
+    background:
+        rgba(255,255,255,0.90);
+
+    padding:
+        11px 11px 20px;
+
+    box-shadow:
+        0 10px 25px rgba(70,45,85,0.20),
+        0 0 15px rgba(255,255,255,0.35);
+
+    border:
+        1px solid rgba(255,255,255,0.9);
+
+    transition:
+        all 0.4s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+    /*
+       Polaroids are ABOVE the floating decorations.
+    */
+    z-index: 3;
+}
+
+.polaroid img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border:
+        1px solid rgba(118,84,138,0.08);
+}
+
+.polaroid p {
+    text-align: center;
+
+    margin-top: 14px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    color: #5d4569;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   POLAROID HEART
+===================================================== */
+
+.polaroid-heart {
+    position: absolute;
+
+    top: 8px;
+    right: 10px;
+
+    font-size: 20px;
+
+    color: #9b6bb0;
+
+    opacity: 0.7;
+
+    z-index: 4;
+
+    text-shadow:
+        0 0 8px rgba(155,107,176,0.4);
+}
+
+
+/* =====================================================
+   DIFFERENT POLAROID ANGLES
+===================================================== */
+
+.polaroid:nth-child(5) {
+    transform: rotate(-4deg);
+}
+
+.polaroid:nth-child(6) {
+    transform: rotate(4deg);
+}
+
+.polaroid:nth-child(7) {
+    transform: rotate(3deg);
+}
+
+.polaroid:nth-child(8) {
+    transform: rotate(-3deg);
+}
+
+
+/* =====================================================
+   POLAROID HOVER
+===================================================== */
+
+.polaroid:hover {
+    transform:
+        rotate(0deg)
+        translateY(-10px)
+        scale(1.04);
+
+    box-shadow:
+        0 18px 35px rgba(70,45,85,0.3);
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   PHOTO NOTE
+===================================================== */
+
+.photo-note {
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #806096;
+
+    margin-top: 20px;
+
+    font-style: italic;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.divider {
+    text-align: center;
+
+    color: #8e6ba1;
+
+    margin: 20px 0;
+
+    letter-spacing: 8px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   ENDING
+===================================================== */
+
+.ending {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+}
+
+.ending::before,
+.ending::after {
+    content: "✦";
+
+    position: absolute;
+
+    font-size: 30px;
+
+    color: #9d78ae;
+
+    animation:
+        sparkle 2s infinite;
+}
+
+.ending::before {
+    left: 20%;
+    top: 30px;
+}
+
+.ending::after {
+    right: 20%;
+    top: 70px;
+
+    animation-delay: 1s;
+}
+
+.ending h2 {
+    font-size: 34px;
+
+    color: #633f79;
+
+    margin-top: 15px;
+}
+
+.ending p {
+    margin-top: 15px;
+
+    line-height: 1.8;
+
+    color: #684a78;
+}
+
+.big-heart {
+    font-size: 65px;
+
+    animation:
+        beat 1.3s infinite;
+
+    filter:
+        drop-shadow(
+            0 5px 12px
+            rgba(118,84,138,0.3)
+        );
+}
+
+@keyframes beat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .card {
+        padding: 30px 15px;
+    }
+
+    .memory-title h2 {
+        font-size: 25px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding:
+            25px 20px 45px;
+    }
+
+    .polaroid img {
+        height: 280px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    /* Keep decorations visible on mobile */
+
+    .deco1 {
+        left: 1%;
+        top: 14%;
+    }
+
+    .deco2 {
+        right: 1%;
+        top: 38%;
+    }
+
+    .deco3 {
+        left: 2%;
+        top: 65%;
+    }
+
+    .deco4 {
+        right: 3%;
+        bottom: 6%;
+    }
+
+    .float-a {
+        left: 8px;
+        top: 80px;
+    }
+
+    .float-b {
+        right: 8px;
+        top: 180px;
+    }
+
+    .float-c {
+        left: 7px;
+        top: 48%;
+    }
+
+    .float-d {
+        right: 8px;
+        top: 63%;
+    }
+
+    .float-e {
+        left: 20%;
+        bottom: 65px;
+    }
+
+    .float-f {
+        right: 20%;
+        bottom: 25px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media(prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND MUSIC
+===================================================== -->
+
+<audio id="bgMusic" loop>
+    <source src="King Of My Heart.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =====================================================
+     GLOBAL FLOATING SPARKLES
+===================================================== -->
+
+<div class="sparkle"
+     style="left:15%; top:20%; animation-delay:0s;">
+    ✦
+</div>
+
+<div class="sparkle"
+     style="left:80%; top:25%; animation-delay:1s;">
+    ✧
+</div>
+
+<div class="sparkle"
+     style="left:25%; top:70%; animation-delay:2s;">
+    ✦
+</div>
+
+<div class="sparkle"
+     style="left:85%; top:75%; animation-delay:1.5s;">
+    ✧
+</div>
+
+<div class="sparkle"
+     style="left:50%; top:15%; animation-delay:2.5s;">
+    ✦
+</div>
+
+
+<!-- =====================================================
+     GLOBAL FLOATING PURPLE HEARTS
+===================================================== -->
+
+<div class="heart"
+     style="left:5%; animation-delay:0s;">
+    💜
+</div>
+
+<div class="heart"
+     style="left:18%; animation-delay:3s;">
+    ♡
+</div>
+
+<div class="heart"
+     style="left:32%; animation-delay:6s;">
+    💜
+</div>
+
+<div class="heart"
+     style="left:47%; animation-delay:1s;">
+    ♡
+</div>
+
+<div class="heart"
+     style="left:63%; animation-delay:4s;">
+    💜
+</div>
+
+<div class="heart"
+     style="left:78%; animation-delay:2s;">
+    ♡
+</div>
+
+<div class="heart"
+     style="left:92%; animation-delay:5s;">
+    💜
+</div>
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<section class="hero">
+
+    <div class="small-title">
+        A little something for
+    </div>
+
+    <h1>
+        Mr. Ezequel Tagaloguin
+    </h1>
+
+    <div class="names">
+        💜Mah Husbae^^
+    </div>
+
+    <div class="date">
+        September 13, 2026
+    </div>
+
+    <button class="open-btn"
+            onclick="openLetter()">
+        💌 Open your Wifae's Letter
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     CONTENT
+===================================================== -->
+
+<main id="content">
+
+<div class="container">
+
+
+<!-- =====================================================
+     PHOTO SECTION
+===================================================== -->
+
+<section class="card">
+
+
+    <!-- FLOATING SYMBOLS FOR PHOTO CARD -->
+
+    <span class="card-float float-a">♡</span>
+
+    <span class="card-float float-b">✦</span>
+
+    <span class="card-float float-c">✧</span>
+
+    <span class="card-float float-d">♡</span>
+
+    <span class="card-float float-e">✦</span>
+
+
+    <!-- MEMORY TITLE -->
+
+    <div class="memory-title">
+
+        <h2>
+            Our Little Memories
+            <span class="camera">📸</span>
+        </h2>
+
+    </div>
+
+
+    <!-- =================================================
+         PHOTOS
+    ================================================== -->
+
+    <div class="photos">
+
+
+        <!-- FLOATING SYMBOLS BEHIND POLAROIDS -->
+
+        <div class="photo-decoration deco1">
+            ♡
+        </div>
+
+        <div class="photo-decoration deco2">
+            ✦
+        </div>
+
+        <div class="photo-decoration deco3">
+            ✧
+        </div>
+
+        <div class="photo-decoration deco4">
+            💜
+        </div>
+
+
+        <!-- POLAROID 1 -->
+
+        <div class="polaroid">
+
+            <span class="polaroid-heart">
+                ♡
+            </span>
+
+            <img src="photo0.jpg">
+
+            <p>
+                Us being us hehe🫣
+            </p>
+
+        </div>
+
+
+        <!-- POLAROID 2 -->
+
+        <div class="polaroid">
+
+            <span class="polaroid-heart">
+                ♡
+            </span>
+
+            <img src="photo3.jpg">
+
+            <p>
+                Our first camera photo🫶
+            </p>
+
+        </div>
+
+
+        <!-- POLAROID 3 -->
+
+        <div class="polaroid">
+
+            <span class="polaroid-heart">
+                ♡
+            </span>
+
+            <img src="photo4.jpeg">
+
+            <p>
+                A moment worth keeping ✨
+            </p>
+
+        </div>
+
+
+        <!-- POLAROID 4 -->
+
+        <div class="polaroid">
+
+            <span class="polaroid-heart">
+                ♡
+            </span>
+
+            <img src="photo5.jpeg">
+
+            <p>
+                More memories to come ♡
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <p class="photo-note">
+        Some of the memories we've made so far. 💜
+    </p>
+
+
+</section>
+
+
+<!-- =====================================================
+     LETTER SECTION
+===================================================== -->
+
+<section class="card">
+
+
+    <!-- FLOATING SYMBOLS FOR LETTER CARD -->
+
+    <span class="card-float float-a">♡</span>
+
+    <span class="card-float float-b">✧</span>
+
+    <span class="card-float float-c">💜</span>
+
+    <span class="card-float float-d">✦</span>
+
+    <span class="card-float float-e">♡</span>
+
+    <span class="card-float float-f">✧</span>
+
+
+    <h2>
+        To My Husbae 💌
+    </h2>
+
+
+    <div class="letter">
+
+Hiii mah future husbaeeee! Today is whhhhaaaaa—??? Gashhh, why did the days go by so fast? It's already been one month, sure na ni? 😭 Mura ra man og gahapon na gisugot tika🥹. This song of Taylor Swift which entitled "King of My Heart" is special dedicated to youuu baeee💞. Happy first monthsary to usss, baeee! ❤️ yeyyyy🫶<br>
+
+Unsay unahon ug ingon? HAHAHAHAHA, murag taas taas jd ni sha bae, ayg ka bored ug basa flsss 🥹. 📣LONG MESSAGE ALERT‼️hehe✌️<br>
+
+Tonight is Sept. 10 2026 and yessss ga prepared nako HAHAHAHAH. So yeahhh, this is my first time celebrating something like this, so I honestly don't know if I'm doing it right. 🥹 <!doctype html></html>But I wanted to give you something because I'm happy that I get to experience this with you. However, dili lang siya butang since wael money huhuness bawi ra ko puhon mwuaps; ipamaagi lang sa nako ug ing-ani since I'm your programmer hehe kuno, chr eme.<br>
+
+Nakaingon na ko nimo ani pero ako nalang sab balikon hehe. During Sinag bae, di lage ko manghimantay ninyong mga lalaki kay nakafocus kos akoa HAHAHAHA. Nakalimot ko ug when tika nabantayan basta kay mu peace sign ko ato AHHAHAHAH and I never thought that na na-fall diay ka nako daan🥹 .
+
+<br>
+
+Diba atong paglaag nato kay didto ko nagkaspark nimo tas damn na attract ko nimo? Kabalo ba kas akong mindset ato na time na nagkafeelings na jd ko nimo? nakachika nako nimo ani na "Dili jd ni pwedeng lakiha paras akoa kay gwapo ra kaayo tas for sure naa koy mga kailog ani tas unsa ra man gd pd ko." mao gyd nay naas akong hunahuna.<br>
+
+Then atong time na ga chat² na ta kay murag ga assume jd ko na ma reciprocate nimo ang akong feelings pero naa gyapon ang mindset na bawal. However, I never thought that you'll pursue me🥹 tas the courage to give me a hint na gusto ko nimo miskag naay laing eab diha na gwapa ba. ambot oii ug unsay nakaon nimo, wa man pd tika gilumay HAHAHAHAHA. Still curious ug nganong ako jd HAHAHAHA. Also ga doubt ko bae ug ako bay iwilling to take a risk , icommit nimo, or willing ifight🤧. Ang maingon ra nako kay di sab ko ingon special na eab🥹, ambot oii pati ako kay way sure sakong kaugalingon. Muingon gai na sila na "maong way nag dugay nimo na laki".<br>
+
+Atong time na mag sabay ming JC, ikaw ra gyuy tabian namo ato whehehe. Nasaksihan ni JC ang akong kaOA sa pagkachika about you nakss AHAHAHAH. Tas kato sab bitawng galaag ta na wa ko nimo gipansin, nalain jd ko ato, na-hurt ba naman ang ea. Natag-anan jd nako ang rason na about ni JC jd maong wa ko nimo pansina HAHAHAHA. Wag kang ganyan kay ikaw moy minte namong gitabian hehe.<br>
+
+Insert: Wa baya ko ga expect na kwaon ko nimos bh atong nanglaag ta WHAHAHHA. Kahaba bas akong hair na gikuha² ko nimo ato HAHAHAHAH chr. Tas kato pong the courage na tubagon ang mga pangutana ni kulot atong birthday nako AHAHHAHAHAH sheeshablee. Pero duhaduhaan baya jd ko na sincere ba ka nako or dili🥹<br>
+
+If you also questioned na nganong nagkagusto ko nimo? HAHAHAHHA simple as that, you caught my attention. Gashh attractive man gd ka, kinsa guy di magkagusto nimo na superrrr handsomeeee kaykaaa shytt, pero didto na ko nakarealize sa paglaag nato AHHAHAA. Na para bang I'll let you ruin my life, eme HAHAHAHAH. Naa nimo akong standard bae; the humor, the braincelss, the lamion HAHAHAHAH, basta oii naa nimo, except sa assurance. Isa lang ang masasabi ko, isa HAHAHAA. Bitaw ug di man gai akoy madala nimos altar, ipakuha tikang lord HAHAHAHAH eme<br>
+
+Ari na tas sweet message mwehehehe
+
+<br>
+
+Thankyousmmm baeee, for all the moments we've shared so far, sa imong pagpakatawa nako(i really love your humorism) and sa imong walang sawang pagpaminaw sa akong yap/kalain sa buot ug pagsabot nako although over na kaayo ko sometimes. I hope we get to make many more memories together, and I hope ikaw ang akong kasabay sa altar, if it is God's will ❤️‍🩹<br>
+
+I apologize baeee, if ma-over na akong batasan sometimes. Mao gyud na akong red flag, I badly want to change, and I sometimes worry nga basin kapoyan ka nako🤧 tas mangita kag lain since dali ra kaayo ko mailisan🥲, labaw nag minte nalang ang akong bati na side ang akong mapakita nimo. I also apologize for having a negative mindset during our fight. Actually, di jud pd ko mubulag oii as long as way cheating involved, and I know that this toxic attitude of mine can change as I learn to understand things better.<br>
+
+This braincell of mine is still a little immature HAHAHAHA. Like, di pa jud kaayo ko maayo musabot sometimes kay lage I want you to meet my expectations, but I know that's not always right cause dili man jud tanan nakong gusto kay makuha. Maong minte ko malain tungod sakong mga expectations na ika disappoint nako. Mao niy mali nako, su is per mali ni nga klasing mindset.<br>
+
+Also bae, regarding sakong red flag pd na side sa lalaki. I assure you bae that gina avoid nako sila pero kung educ purposes maka entertain jd ko bae also sa co-officers nako. Pleasee know that na you're enough for me bae and Iloveyouuuusm. You're irreplaceable and I do have empathy when it comes in ana. Gashhh, wa may makapantay saimoha nakss, di sila kaabot nimo and when it comes to guys, I do honest talk saimoha kay labaw sab ko na di ko ganahan na naay secret or panghimotbot sa atong rs. Both of us should be open. like, honest lang jd sa tanan, no secrets bae.<br>
+
+In addition, Kindly please respect me as your woman, respect my body and soul. If you really love me, you won't touch me until you brought me on the altar. My virginity is really important to me and I hope you know that. Gikahadlokan jd ko ng maburos, swear. Imagine you have a daughter, tas ang binuhatan sa iyang uyab kay same as you? do you like it? if it's no, then avoid it. Treat me like on how you want your daughter to be treated. <br>
+
+
+Therefore, I know that someday we can define the phrase "from toxic to a healthy relationship" if both of us are willing to grow and understand each other consistently, we can achieve that.<br>
+
+Moreover, I may not a perfect Girlfriend of yours but allow me to love you in the best way I know how, while I slowly learn to let go of my doubts and fears; I will support you on the things that will give you a brighter future. I will be on your side to appreciate your progress and improvements; For every obstacle that we face, we should fight the problems themselves not ourselves and let us both put God at the center of everything💞. More months to us bae🎉✨.Iloveyouuuuusooomuchhh Baeeee💋
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ENDING
+===================================================== -->
+
+<section class="ending">
+
+    <div class="big-heart">
+        💜
+    </div>
+
+    <h2>
+        Happy 1st Monthsary!
+    </h2>
+
+    <p>
+        One month down, and hopefully many more memories to come my future husband🫶
+    </p>
+
+    <p>
+        — Your Wifaee, Ms. Jannen Delfino 💜
+    </p>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function openLetter() {
+
+    document.getElementById("content").style.display = "block";
+
+    const music =
+        document.getElementById("bgMusic");
+
+    music.volume = 0.35;
+
+    music.play();
+
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
